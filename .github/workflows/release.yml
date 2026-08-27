@@ -55,10 +55,11 @@ jobs:
       - run: npm ci
       # GitHub interpolates missing secrets as empty strings. Tauri still sees
       # APPLE_CERTIFICATE as set and tries to `security import` an empty .p12,
-      # which fails the Mac job. Only export these when a cert actually exists;
-      # otherwise the unsigned build is published as the comment below intended.
+      # which fails the Mac job. `secrets` cannot be used in `if:`, so skip
+      # the export from the shell when the cert is empty; the unsigned build
+      # then publishes as intended.
       - name: Load Apple signing secrets
-        if: runner.os == 'macOS' && secrets.APPLE_CERTIFICATE != ''
+        if: runner.os == 'macOS'
         env:
           APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
@@ -67,6 +68,10 @@ jobs:
           APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
         run: |
+          if [ -z "$APPLE_CERTIFICATE" ]; then
+            echo "No APPLE_CERTIFICATE secret; Mac build will be unsigned."
+            exit 0
+          fi
           {
             echo "APPLE_CERTIFICATE<<EOF"
             printf '%s\n' "$APPLE_CERTIFICATE"
