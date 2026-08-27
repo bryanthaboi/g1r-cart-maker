@@ -1,9 +1,11 @@
-# Golden bundles and their inputs are compared byte for byte. Git's autocrlf
-# would rewrite their newlines on a Windows checkout and every parity test would
-# fail there, so these files check out exactly as committed.
+# Golden bundles, their inputs, and include_str! templates are compared (or
+# written) byte for byte. Git's autocrlf would rewrite their newlines on a
+# Windows checkout and every parity test would fail there, so these files
+# check out exactly as committed.
 *.g1rcart -text
 crates/cartcore/tests/fixtures/** -text
 crates/*/tests/fixtures/** -text
+crates/cartcore/templates/** -text
 *.png binary
 *.ico binary
 *.icns binary

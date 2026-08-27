@@ -1,6 +1,6 @@
 # {{title}}
 
-A custom cart for the LOVE2D Pokemon engine: a pinned mod setup that plays as
+A custom cart for G1R engine: a pinned mod setup that plays as
 its own game on top of `{{base}}`. It ships no code -- every mod named here is
 published separately, and the cart pins each one to an exact build.
 

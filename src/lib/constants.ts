@@ -51,12 +51,12 @@ export const SEAL_HELP: Record<Seal, string> = {
 };
 
 export const BASE_LABELS: Record<Base, string> = {
-  red: "Pokemon Red",
-  blue: "Pokemon Blue",
-  yellow: "Pokemon Yellow",
-  gold: "Pokemon Gold",
-  silver: "Pokemon Silver",
-  crystal: "Pokemon Crystal",
+  red: "Red",
+  blue: "Blue",
+  yellow: "Yellow",
+  gold: "Gold",
+  silver: "Silver",
+  crystal: "Crystal",
 };
 
 export const FINISH_HELP: Record<Finish, string> = {
