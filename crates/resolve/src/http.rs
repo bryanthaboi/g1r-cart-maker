@@ -134,6 +134,11 @@ pub struct Client {
     download_timeout: Duration,
     api_base: String,
     gamebanana_base: String,
+    /// Retry backoffs asked for, in unscaled seconds. A test reads this instead
+    /// of timing the wall clock, which on a loaded runner measures the machine
+    /// rather than the retry policy. Inter-request pacing is not a retry and is
+    /// not recorded here.
+    backoffs: Mutex<Vec<f64>>,
 }
 
 impl Default for Client {
@@ -157,6 +162,7 @@ impl Client {
             download_timeout: Duration::from_secs(120),
             api_base: "https://api.github.com".to_string(),
             gamebanana_base: "https://gamebanana.com".to_string(),
+            backoffs: Mutex::new(Vec::new()),
         }
     }
 
@@ -185,6 +191,21 @@ impl Client {
     /// Multiplies every wait. Only a test ever moves this off 1.0.
     pub fn set_wait_scale(&mut self, scale: f64) {
         self.scale = scale.max(0.0);
+    }
+
+    /// The retry backoffs this client asked for, oldest first, before scaling.
+    pub fn backoffs(&self) -> Vec<f64> {
+        self.backoffs
+            .lock()
+            .map(|got| got.clone())
+            .unwrap_or_default()
+    }
+
+    fn backoff(&self, seconds: f64) {
+        if let Ok(mut seen) = self.backoffs.lock() {
+            seen.push(seconds);
+        }
+        self.sleep(seconds);
     }
 
     fn sleep(&self, seconds: f64) {
@@ -251,7 +272,7 @@ impl Client {
                     if retriable && attempt + 1 < ATTEMPTS {
                         let after = header(&response, "retry-after")
                             .and_then(|raw| raw.trim().parse::<f64>().ok());
-                        self.sleep(backoff_delay(attempt, after));
+                        self.backoff(backoff_delay(attempt, after));
                         continue;
                     }
                     return Err(HttpError::Unreachable(format!(
@@ -264,7 +285,7 @@ impl Client {
                 Err(problem) => {
                     self.mark();
                     if attempt + 1 < ATTEMPTS {
-                        self.sleep(transport_delay(attempt));
+                        self.backoff(transport_delay(attempt));
                         continue;
                     }
                     return Err(HttpError::Unreachable(format!("{}: {}", url, problem)));

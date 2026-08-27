@@ -6,7 +6,6 @@ use resolve::http::{
 use resolve::{cancel_flag, github_token};
 use std::sync::atomic::Ordering;
 use std::sync::Arc;
-use std::time::Instant;
 use support::{Reply, TestServer};
 
 const HELLO_SHA: &str = "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9";
@@ -121,6 +120,8 @@ fn retry_then_success() {
     assert_eq!(server.hits("/flaky"), 3);
 }
 
+/// Which delay the policy picks, not how long the machine took: a wall-clock
+/// assertion here measured CI's load and failed on a busy runner.
 #[test]
 fn retry_after_is_honored_over_the_default_ladder() {
     let with_header = TestServer::start(Arc::new(|_path, hit| {
@@ -131,18 +132,17 @@ fn retry_after_is_honored_over_the_default_ladder() {
         }
     }));
     let mut client = resolve::Client::new(None);
-    client.set_wait_scale(0.02);
-    let started = Instant::now();
+    client.set_wait_scale(0.0);
     assert_eq!(
         client
             .get_text(&with_header.url("/slow"), None, false)
             .unwrap(),
         "done"
     );
-    let waited = started.elapsed().as_secs_f64();
     assert!(
-        waited >= 0.3,
-        "Retry-After 20 should dominate, waited {waited}"
+        client.backoffs().contains(&20.0),
+        "Retry-After 20 should dominate, asked for {:?}",
+        client.backoffs()
     );
 
     let plain = TestServer::start(Arc::new(|_path, hit| {
@@ -152,13 +152,14 @@ fn retry_after_is_honored_over_the_default_ladder() {
             Reply::ok("done")
         }
     }));
-    let started = Instant::now();
+    let mut client = resolve::Client::new(None);
+    client.set_wait_scale(0.0);
     assert_eq!(
         client.get_text(&plain.url("/slow"), None, false).unwrap(),
         "done"
     );
-    let waited = started.elapsed().as_secs_f64();
-    assert!(waited < 0.3, "the default ladder is 2s, waited {waited}");
+    // The first rung of the ladder, with no header to override it.
+    assert_eq!(client.backoffs(), vec![2.0]);
 }
 
 #[test]
