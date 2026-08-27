@@ -4343,6 +4343,7 @@ name = "toolchain"
 version = "0.1.0"
 dependencies = [
  "cartcore",
+ "libc",
  "serde",
  "serde_json",
  "tempdir",

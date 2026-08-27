@@ -4,7 +4,7 @@
 // canvas and nobody finds out until a cart ships.
 
 import { createCanvas, loadImage } from "@napi-rs/canvas";
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { resolve as joinPath } from "node:path";
 import { beforeAll, describe, expect, it } from "vitest";
 import { initialDoc } from "./templates";
@@ -118,9 +118,34 @@ describe("label export", () => {
     const one = await decodeAsync(exportDataUrl(docFor(), resolve, { multiple: 1, quantize: null }));
     const two = await decodeAsync(exportDataUrl(docFor(), resolve, { multiple: 2, quantize: null }));
     expect([two.width, two.height]).toEqual([1000, 882]);
-    const a = one.at(250, 220);
-    const b = two.at(500, 440);
-    expect(Math.abs((a[0] ?? 0) - (b[0] ?? 0))).toBeLessThan(20);
+    // Averaged over a block: a single sample at 2x can land on an antialiased
+    // edge, and the fonts differ between a developer's machine and CI.
+    const mean = (
+      png: { at: (x: number, y: number) => number[] },
+      x0: number,
+      y0: number,
+      size: number,
+    ): number[] => {
+      let red = 0;
+      let green = 0;
+      let blue = 0;
+      let count = 0;
+      for (let y = y0; y < y0 + size; y += 2) {
+        for (let x = x0; x < x0 + size; x += 2) {
+          const px = png.at(x, y);
+          red += px[0] ?? 0;
+          green += px[1] ?? 0;
+          blue += px[2] ?? 0;
+          count += 1;
+        }
+      }
+      return [red / count, green / count, blue / count];
+    };
+    const a = mean(one, 60, 40, 40);
+    const b = mean(two, 120, 80, 80);
+    for (let channel = 0; channel < 3; channel += 1) {
+      expect(Math.abs((a[channel] ?? 0) - (b[channel] ?? 0)), `channel ${channel}`).toBeLessThan(12);
+    }
   });
 
   it("renders the same bytes twice for the same document", async () => {
@@ -134,13 +159,5 @@ describe("label export", () => {
       exportDataUrl(docFor(), () => null, { multiple: 1, quantize: null }),
     );
     expect([png.width, png.height]).toEqual([500, 441]);
-  });
-
-  /// Writes the render out so a human can look at it.
-  it("saves a sample render for eyeballing", async () => {
-    const url = exportDataUrl(docFor(), resolve, { multiple: 1, quantize: null });
-    const body = Buffer.from(url.slice(url.indexOf(",") + 1), "base64");
-    writeFileSync(joinPath(process.cwd(), "target", "label-sample.png"), body);
-    expect(body.length).toBeGreaterThan(1000);
   });
 });

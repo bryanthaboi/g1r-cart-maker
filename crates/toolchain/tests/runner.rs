@@ -1,8 +1,10 @@
 use std::path::PathBuf;
 use std::time::Duration;
 use toolchain::fake::FakeRunner;
+#[cfg(unix)]
+use toolchain::runner::SystemRunner;
 use toolchain::runner::{
-    redact, CancelToken, Invocation, NoSleep, Output, RunError, Runner, Sleeper, SystemRunner,
+    redact, CancelToken, Invocation, NoSleep, Output, RunError, Runner, Sleeper,
 };
 
 #[test]
@@ -179,5 +181,65 @@ mod system {
             .expect("spawn");
         assert!(output.cancelled);
         assert!(start.elapsed() < Duration::from_secs(10));
+    }
+
+    /// The shape that hung CI: a script that forks instead of exec'ing leaves a
+    /// grandchild holding the pipes. Killing only the direct child left that
+    /// grandchild running and the reader blocked for its whole lifetime.
+    #[test]
+    fn a_cancelled_child_takes_its_children_with_it() {
+        let bin = tempdir::TempDir::new("bin").expect("temp");
+        let pidfile = bin.path().join("grandchild.pid");
+        tool(
+            bin.path(),
+            "forker",
+            &format!(
+                "#!/bin/sh\nsleep 30 &\necho $! > {}\nwait\n",
+                pidfile.to_string_lossy()
+            ),
+        );
+        let cancel = CancelToken::new();
+        let token = cancel.clone();
+        // Cancel only once the grandchild exists, or the run is cancelled before
+        // the script has forked and the test proves nothing.
+        let watched = pidfile.clone();
+        std::thread::spawn(move || {
+            for _ in 0..400 {
+                if std::fs::read_to_string(&watched)
+                    .map(|text| !text.trim().is_empty())
+                    .unwrap_or(false)
+                {
+                    break;
+                }
+                std::thread::sleep(Duration::from_millis(10));
+            }
+            token.cancel();
+        });
+        let start = std::time::Instant::now();
+        let output = SystemRunner::new()
+            .run(
+                &Invocation::new(
+                    bin.path().join("forker").to_string_lossy().as_ref(),
+                    [] as [&str; 0],
+                ),
+                &cancel,
+            )
+            .expect("spawn");
+        assert!(output.cancelled);
+        assert!(
+            start.elapsed() < Duration::from_secs(5),
+            "cancelling took {:?}",
+            start.elapsed()
+        );
+
+        let pid: i32 = std::fs::read_to_string(&pidfile)
+            .expect("the script must have recorded its grandchild")
+            .trim()
+            .parse()
+            .expect("a pid");
+        // Give the signal a moment to land, then prove the grandchild is gone.
+        std::thread::sleep(Duration::from_millis(300));
+        let alive = unsafe { libc::kill(pid, 0) } == 0;
+        assert!(!alive, "grandchild {} outlived the cancelled run", pid);
     }
 }

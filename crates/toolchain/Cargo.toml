@@ -7,6 +7,12 @@ rust-version.workspace = true
 license.workspace = true
 repository.workspace = true
 
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[target.'cfg(unix)'.dev-dependencies]
+libc = "0.2"
+
 [dependencies]
 cartcore = { path = "../cartcore" }
 serde = { workspace = true }
