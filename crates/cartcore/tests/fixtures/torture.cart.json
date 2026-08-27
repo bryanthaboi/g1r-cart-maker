@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "id": "edge-case",
+  "title": "Pokémon \"quoted\" \\ back",
+  "version": "1.0.0-rc.1+build.5",
+  "author": "auteur namé",
+  "repo": "someone/edge-case",
+  "summary": "quotes \" and a backslash \\ and ünïcode",
+  "shell": "#0A0B0C",
+  "finish": "sparkle+holo",
+  "label": "art/label.png",
+  "base": "crystal",
+  "engine": ">=1.0.0 <2.0.0 || ^3.1",
+  "seal": "open",
+  "speeds": [
+    1,
+    2,
+    200
+  ],
+  "mods": [
+    {
+      "id": "zeta",
+      "source": "github",
+      "repo": "o/zeta",
+      "version": "0.0.1",
+      "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "options": {
+        "n": 3,
+        "f": 0.5,
+        "big": 1e+20,
+        "small": 1.5e-07,
+        "neg": -2,
+        "t": true,
+        "s": "vál\"ue",
+        "1numeric": "keyed",
+        "with space": "x",
+        "end": "reserved word key"
+      }
+    },
+    {
+      "id": "alpha",
+      "source": "gamebanana",
+      "mod": 546899,
+      "file": 1294214,
+      "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "enabled": false,
+      "options": {}
+    }
+  ],
+  "load_order": [
+    "alpha",
+    "zeta"
+  ]
+}

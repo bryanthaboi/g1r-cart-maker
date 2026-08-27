@@ -1,0 +1,6 @@
+{
+  "id": "broken",
+  "name": "Broken Mod",
+  "version": "1.0.0",
+  "entry": "../../../etc/passwd"
+}

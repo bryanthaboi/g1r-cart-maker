@@ -1,0 +1,3 @@
+*.g1rcart
+dist/
+.DS_Store

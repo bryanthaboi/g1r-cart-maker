@@ -1,0 +1,22 @@
+[workspace]
+members = ["crates/cartcore", "crates/resolve", "crates/toolchain", "src-tauri"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.77"
+license = "MIT"
+repository = "https://github.com/bryanthaboi/g1r-cart-maker"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order", "float_roundtrip"] }
+regex = "1"
+sha2 = "0.10"
+md-5 = "0.10"
+base64 = "0.22"
+flate2 = { version = "1", default-features = false, features = ["zlib"] }
+libz-sys = { version = "1", default-features = false, features = ["static"] }
+crc32fast = "1"
+thiserror = "2"

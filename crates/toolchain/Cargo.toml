@@ -1,0 +1,17 @@
+[package]
+name = "toolchain"
+description = "git and gh detection and the cart repo publish pipeline"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+cartcore = { path = "../cartcore" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+tempdir = "0.3"

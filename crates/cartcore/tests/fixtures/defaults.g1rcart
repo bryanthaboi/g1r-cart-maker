@@ -1,0 +1,48 @@
+return {
+  cart = {
+    author = "someone",
+    base = "red",
+    engine = ">=1.0.0 <2.0.0",
+    id = "kanto-hard",
+    label = "label.png",
+    load_order = {
+      [1] = "harder-trainers",
+      [2] = "new-music",
+    },
+    mods = {
+      [1] = {
+        id = "harder-trainers",
+        options = {
+          difficulty = "brutal",
+          levelCap = 100,
+          nuzlocke = true,
+        },
+        repo = "someone/harder-trainers",
+        sha256 = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        source = "github",
+        version = "2.1.0",
+      },
+      [2] = {
+        file = 1294214,
+        id = "new-music",
+        md5 = "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        mod = 546899,
+        source = "gamebanana",
+      },
+    },
+    repo = "someone/kanto-hard",
+    seal = "sealed",
+    shell = "#8b1a1a",
+    summary = "Every trainer bites back.",
+    title = "Kanto Hard Mode",
+    version = "1.0.0",
+  },
+  format = "g1rcart",
+  formatVersion = 1,
+  labelArt = {
+    bytes = 329,
+    data = "iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAIAAABt+uBvAAABEElEQVR42u3bsQ2DQAxAUQagoWWZ7JGVMhtjsAddlCppzubsPMkNUqoncpgvsTzW1XyZBQEgQIAmAnrt+58PIECAAAECBAgQIECAsoDO43jPc9s+L3/OzL8fD9RJZzxQM53BQP10RgK11Ak5gzrp3ANU617LBir3T0wFqnhO5QEVPcWTgOo+4zKASm8A4UDV96NYoAbbYyBQj906CqjNm4cepAfpQXqQHqQH6UF6kB6kB+lBepAepAfpQXqQHqQH6UF6kB6kB+lBepAepAfpQXqQHqQH6UF6kB6kB+lBepAepAfpQXrQ1D3IR72AAAECBAgQIECAAAECBAgQIECAAAECBAgQIEDVgAwgQIAATTQX8ga4nu9vfZ0AAAAASUVORK5CYII=",
+    encoding = "base64",
+    name = "label.png",
+  },
+}

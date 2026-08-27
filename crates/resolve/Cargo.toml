@@ -1,0 +1,23 @@
+[package]
+name = "resolve"
+description = "Release resolution, index feeds, archives and online validation"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+cartcore = { path = "../cartcore" }
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+md-5 = { workspace = true }
+base64 = { workspace = true }
+thiserror = { workspace = true }
+ureq = { version = "3", features = ["json"] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[dev-dependencies]
+tempdir = "0.3"
+tiny_http = "0.12"

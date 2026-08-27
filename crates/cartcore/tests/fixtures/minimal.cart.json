@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "id": "minimal",
+  "title": "Minimal",
+  "version": "0.1.0",
+  "author": "someone",
+  "shell": "#8b1a1a",
+  "base": "red",
+  "mods": [
+    {
+      "id": "only",
+      "source": "github",
+      "repo": "o/only",
+      "version": "1.0.0",
+      "sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+    }
+  ]
+}

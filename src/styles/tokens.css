@@ -1,0 +1,116 @@
+/* Shared design tokens. Both the app shell and the label designer read these;
+   neither redefines a token, and no component hardcodes a colour. */
+
+:root {
+  color-scheme: dark;
+
+  --bg: #14161a;
+  --bg-raised: #1b1e24;
+  --bg-sunken: #101216;
+  --bg-input: #23272f;
+  --bg-hover: #262b33;
+  --bg-active: #2f3540;
+
+  --border: #2b3038;
+  --border-strong: #3b424e;
+  --border-focus: #6ea8fe;
+
+  --text: #e7eaf0;
+  --text-dim: #a3abb9;
+  --text-faint: #6f7885;
+
+  --accent: #d33a2c;
+  --accent-hover: #e6483a;
+  --accent-text: #ffffff;
+  --accent-soft: #3a1f1d;
+
+  --ok: #4bb76a;
+  --ok-soft: #16301f;
+  --warn: #d8a13a;
+  --warn-soft: #33280f;
+  --error: #e0574c;
+  --error-soft: #331a18;
+  --note: #6ea8fe;
+  --note-soft: #16233a;
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 14px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-md: 13px;
+  --text-lg: 15px;
+  --text-xl: 19px;
+  --text-2xl: 25px;
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 6px 24px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 18px 50px rgba(0, 0, 0, 0.55);
+
+  --sidebar-width: 236px;
+  --header-height: 46px;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f4f5f7;
+  --bg-raised: #ffffff;
+  --bg-sunken: #e9ebef;
+  --bg-input: #ffffff;
+  --bg-hover: #eceef2;
+  --bg-active: #e0e3e9;
+
+  --border: #d7dae1;
+  --border-strong: #b9bec9;
+
+  --text: #171a1f;
+  --text-dim: #5b6270;
+  --text-faint: #868e9c;
+
+  --accent-soft: #fbe6e3;
+  --ok-soft: #e4f4e8;
+  --warn-soft: #fbf1dc;
+  --error-soft: #fbe5e3;
+  --note-soft: #e5eefd;
+
+  --shadow-1: 0 1px 2px rgba(16, 20, 28, 0.1);
+  --shadow-2: 0 6px 24px rgba(16, 20, 28, 0.12);
+  --shadow-3: 0 18px 50px rgba(16, 20, 28, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--text-md);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}

@@ -1,0 +1,6 @@
+{
+  "schema_version": 2,
+  "mods": {
+    "example": [{"key":"enabled","type":"switch","label":"Enabled"}]
+  }
+}

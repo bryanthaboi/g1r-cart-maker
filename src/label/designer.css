@@ -1,0 +1,380 @@
+/* Label designer styling. Colours, spacing and type come from tokens.css only. */
+
+.ld-root {
+  display: grid;
+  grid-template-columns: 232px minmax(0, 1fr) 296px;
+  grid-template-rows: minmax(0, 1fr);
+  height: 100%;
+  min-height: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--text-md);
+}
+
+.ld-column {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--bg-raised);
+  overflow: hidden;
+}
+
+.ld-column--left {
+  border-right: 1px solid var(--border);
+}
+
+.ld-column--right {
+  border-left: 1px solid var(--border);
+}
+
+.ld-centre {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: var(--bg-sunken);
+}
+
+.ld-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-raised);
+  min-height: var(--header-height);
+  flex-wrap: wrap;
+}
+
+.ld-bar--footer {
+  border-bottom: none;
+  border-top: 1px solid var(--border);
+  min-height: 0;
+  color: var(--text-dim);
+  font-size: var(--text-sm);
+}
+
+.ld-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.ld-spacer {
+  flex: 1 1 auto;
+}
+
+.ld-button {
+  appearance: none;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-input);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 5px 9px;
+  font: inherit;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.ld-button:hover:not(:disabled) {
+  background: var(--bg-hover);
+}
+
+.ld-button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.ld-button[aria-pressed="true"] {
+  background: var(--bg-active);
+  border-color: var(--border-focus);
+}
+
+.ld-button--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.ld-button--primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.ld-button--icon {
+  padding: 4px 7px;
+  min-width: 28px;
+  font-size: var(--text-sm);
+}
+
+.ld-button--danger {
+  color: var(--error);
+}
+
+.ld-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.ld-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ld-stage--drop::after {
+  content: "";
+  position: absolute;
+  inset: var(--space-2);
+  border: 2px dashed var(--border-focus);
+  border-radius: var(--radius);
+  pointer-events: none;
+}
+
+.ld-section {
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.ld-section--grow {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.ld-title {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  margin: 0;
+}
+
+.ld-layers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ld-layer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: default;
+  background: var(--bg-input);
+}
+
+.ld-layer:hover {
+  background: var(--bg-hover);
+}
+
+.ld-layer[data-selected="true"] {
+  border-color: var(--border-focus);
+  background: var(--bg-active);
+}
+
+.ld-layer[data-dragover="true"] {
+  border-top-color: var(--accent);
+}
+
+.ld-layer__name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ld-layer__name:disabled {
+  color: var(--text-faint);
+  cursor: default;
+}
+
+.ld-layer__badge {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0 5px;
+}
+
+.ld-layer__grip {
+  cursor: grab;
+  color: var(--text-faint);
+  padding: 0 2px;
+  user-select: none;
+}
+
+.ld-layer__grip:active {
+  cursor: grabbing;
+}
+
+.ld-layer[data-dragging="true"] {
+  opacity: 0.5;
+}
+
+.ld-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ld-field__label {
+  font-size: var(--text-xs);
+  color: var(--text-dim);
+}
+
+.ld-row {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.ld-row > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.ld-input,
+.ld-select,
+.ld-textarea {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--text-sm);
+  padding: 5px 7px;
+}
+
+.ld-textarea {
+  min-height: 72px;
+  resize: vertical;
+  font-family: var(--font-mono);
+}
+
+.ld-colour {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+}
+
+.ld-colour__swatch {
+  width: 28px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: none;
+  cursor: pointer;
+}
+
+.ld-colour__hex {
+  flex: 1 1 auto;
+  font-family: var(--font-mono);
+}
+
+.ld-colour__clear {
+  color: var(--text-faint);
+}
+
+.ld-note {
+  font-size: var(--text-sm);
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.ld-empty {
+  color: var(--text-faint);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+.ld-banner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--note-soft);
+  font-size: var(--text-sm);
+}
+
+.ld-banner--error {
+  background: var(--error-soft);
+}
+
+.ld-banner--warn {
+  background: var(--warn-soft);
+}
+
+.ld-banner--ok {
+  background: var(--ok-soft);
+}
+
+.ld-banner__actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.ld-banner ul {
+  margin: 0;
+  padding-left: var(--space-4);
+}
+
+.ld-preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.ld-preview canvas {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  border-radius: var(--radius);
+  background: var(--bg-sunken);
+}
+
+.ld-chips {
+  display: flex;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.ld-status {
+  color: var(--text-dim);
+  font-size: var(--text-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ld-status--error {
+  color: var(--error);
+}
+
+.ld-hidden-input {
+  display: none;
+}

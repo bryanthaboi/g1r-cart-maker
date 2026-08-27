@@ -1,0 +1,7 @@
+{
+  "mods": {
+    "example": [
+      {"key":"enabled","type":"toggle","label":"Enabled","default":true}
+    ]
+  }
+}

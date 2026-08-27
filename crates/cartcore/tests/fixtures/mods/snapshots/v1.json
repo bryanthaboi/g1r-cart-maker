@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "mods": {
+    "example": [
+      {"key":"enabled","type":"toggle","label":"Enabled","default":true},
+      {"key":"mode","type":"choice","label":"Mode","default":"safe",
+       "choices":[["Safe","safe"],["Fast","fast"]]},
+      {"key":"rate","type":"number","label":"Rate","default":5,
+       "min":0,"max":10,"step":1,"visible_if":{"key":"mode","equals":"fast"}},
+      {"key":"name","type":"text","label":"Name","default":"","maxLen":12,
+       "visible_if":{"key":"enabled","not_equals":false}},
+      {"key":"gone","type":"dial","label":"Unknown"},
+      {"type":"toggle","label":"No key"},
+      "not a row"
+    ],
+    "other": [],
+    "bad": {"not":"an array"}
+  }
+}

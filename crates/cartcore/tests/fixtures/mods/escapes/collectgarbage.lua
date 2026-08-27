@@ -1,0 +1,2 @@
+collectgarbage("collect")
+return {}

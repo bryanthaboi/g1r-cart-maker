@@ -1,0 +1,36 @@
+[package]
+name = "g1r-cart-maker"
+description = "G1R Custom Cart Maker"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[lib]
+name = "g1r_cart_maker_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+cartcore = { path = "../crates/cartcore" }
+resolve = { path = "../crates/resolve" }
+toolchain = { path = "../crates/toolchain" }
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+md-5 = { workspace = true }
+base64 = { workspace = true }
+thiserror = { workspace = true }
+ureq = { version = "3", features = ["json"] }
+zip = { version = "2", default-features = false, features = ["deflate"] }
+dirs = "6"
+uuid = { version = "1", features = ["v4"] }
+
+[dev-dependencies]
+tempdir = "0.3"

@@ -1,0 +1,272 @@
+{
+  "specs": [
+    {
+      "spec": "owner/repo@1.2.3",
+      "source": "github",
+      "target": "owner/repo",
+      "version": "1.2.3"
+    },
+    {
+      "spec": "https://github.com/owner/repo@1.2.3",
+      "source": "github",
+      "target": "owner/repo",
+      "version": "1.2.3"
+    },
+    {
+      "spec": "owner/repo.git@v1.2.3",
+      "source": "github",
+      "target": "owner/repo",
+      "version": "1.2.3"
+    },
+    {
+      "spec": "http://github.com/o/r@0.0.1",
+      "source": "github",
+      "target": "o/r",
+      "version": "0.0.1"
+    },
+    {
+      "spec": "https://gamebanana.com/mods/546899",
+      "source": "gamebanana",
+      "target": 546899,
+      "version": null
+    },
+    {
+      "spec": "gamebanana:546899",
+      "source": "gamebanana",
+      "target": 546899,
+      "version": null
+    },
+    {
+      "spec": "546899",
+      "source": "gamebanana",
+      "target": 546899,
+      "version": null
+    },
+    {
+      "spec": "www.gamebanana.com/mods/12/",
+      "source": "gamebanana",
+      "target": 12,
+      "version": null
+    },
+    {
+      "spec": "not a spec",
+      "source": null,
+      "target": null,
+      "version": null
+    },
+    {
+      "spec": "owner/repo",
+      "source": null,
+      "target": null,
+      "version": null
+    },
+    {
+      "spec": "  owner/repo@1.2.3  ",
+      "source": "github",
+      "target": "owner/repo",
+      "version": "1.2.3"
+    },
+    {
+      "spec": "owner/repo@",
+      "source": null,
+      "target": null,
+      "version": null
+    },
+    {
+      "spec": "gamebanana:0",
+      "source": "gamebanana",
+      "target": 0,
+      "version": null
+    },
+    {
+      "spec": "https://gamebanana.com/mods/abc",
+      "source": null,
+      "target": null,
+      "version": null
+    }
+  ],
+  "options": [
+    {
+      "text": "a=true",
+      "key": "a",
+      "value": true,
+      "nonfinite": false
+    },
+    {
+      "text": "a=FALSE",
+      "key": "a",
+      "value": false,
+      "nonfinite": false
+    },
+    {
+      "text": "a=3",
+      "key": "a",
+      "value": 3,
+      "nonfinite": false
+    },
+    {
+      "text": "a=1.5",
+      "key": "a",
+      "value": 1.5,
+      "nonfinite": false
+    },
+    {
+      "text": "a=hard",
+      "key": "a",
+      "value": "hard",
+      "nonfinite": false
+    },
+    {
+      "text": "a=",
+      "key": "a",
+      "value": "",
+      "nonfinite": false
+    },
+    {
+      "text": "a= 7 ",
+      "key": "a",
+      "value": 7,
+      "nonfinite": false
+    },
+    {
+      "text": "a=0x10",
+      "key": "a",
+      "value": "0x10",
+      "nonfinite": false
+    },
+    {
+      "text": "a=1e3",
+      "key": "a",
+      "value": 1000.0,
+      "nonfinite": false
+    },
+    {
+      "text": "a=-2",
+      "key": "a",
+      "value": -2,
+      "nonfinite": false
+    },
+    {
+      "text": "nope",
+      "key": null,
+      "value": null,
+      "nonfinite": false
+    },
+    {
+      "text": "=v",
+      "key": null,
+      "value": null,
+      "nonfinite": false
+    },
+    {
+      "text": "a=b=c",
+      "key": "a",
+      "value": "b=c",
+      "nonfinite": false
+    },
+    {
+      "text": "a=inf",
+      "key": "a",
+      "value": null,
+      "nonfinite": true
+    },
+    {
+      "text": "a=nan",
+      "key": "a",
+      "value": null,
+      "nonfinite": true
+    }
+  ],
+  "ids": [
+    {
+      "text": "Harder Trainers",
+      "id": "harder-trainers"
+    },
+    {
+      "text": "  --lead--  ",
+      "id": "lead"
+    },
+    {
+      "text": "MOD",
+      "id": "mod"
+    },
+    {
+      "text": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "text": "!!!",
+      "id": "mod"
+    },
+    {
+      "text": "mod_v2.zip",
+      "id": "mod_v2-zip"
+    },
+    {
+      "text": "ünïcode",
+      "id": "n-code"
+    },
+    {
+      "text": "a--b",
+      "id": "a--b"
+    }
+  ],
+  "ranges": [
+    {
+      "range": ">=1.0.0 <2.0.0",
+      "problem": null
+    },
+    {
+      "range": "^1.2",
+      "problem": null
+    },
+    {
+      "range": "1.2.3",
+      "problem": null
+    },
+    {
+      "range": ">1 || <0.9",
+      "problem": null
+    },
+    {
+      "range": "<=2",
+      "problem": null
+    },
+    {
+      "range": "",
+      "problem": "must be a non-empty semver range string"
+    },
+    {
+      "range": ">=x",
+      "problem": "has an unparsable version in '>=x'"
+    },
+    {
+      "range": ">>1.0.0",
+      "problem": "has an unknown comparator '>>'"
+    },
+    {
+      "range": "1.0.0 || ",
+      "problem": "has an empty alternative around '||'"
+    },
+    {
+      "range": "v1.0.0",
+      "problem": null
+    },
+    {
+      "range": "==1.0.0",
+      "problem": null
+    },
+    {
+      "range": "!=1",
+      "problem": "has an unparsable version in '!=1'"
+    },
+    {
+      "range": ">=1.0.0-rc.1",
+      "problem": null
+    },
+    {
+      "range": "1.0.0+build",
+      "problem": null
+    }
+  ]
+}

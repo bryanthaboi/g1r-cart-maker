@@ -1,0 +1,26 @@
+name: Format drift
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "gen1recomp ref to compare against"
+        required: false
+        default: dev
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compare the cart format against gen1recomp
+        run: node tools/drift-guard.mjs --ref "${{ github.event.inputs.ref || 'dev' }}"

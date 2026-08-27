@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "id": "demo_cart",
+  "title": "Demo Cart",
+  "version": "0.1.0",
+  "author": "someone",
+  "repo": "someone/demo-cart",
+  "summary": "A demo cart.",
+  "shell": "#2f6f4f",
+  "label": "label.png",
+  "base": "gold",
+  "engine": ">=0.0.0-dev <1.0.0",
+  "seal": "sealed+",
+  "mods": [
+    {
+      "id": "example-mod",
+      "source": "github",
+      "repo": "owner/example-mod",
+      "version": "0.1.0",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ]
+}

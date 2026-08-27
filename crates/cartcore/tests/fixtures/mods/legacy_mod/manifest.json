@@ -1,0 +1,11 @@
+{
+  "id": "legacy",
+  "name": "Legacy Mod",
+  "version": "0.9.0",
+  "entry": "main.lua",
+  "profile": "sidequest",
+  "permissions": ["network", "telepathy"],
+  "dependencies": { "base": "^1.0.0", "helper": null },
+  "log_url": "http://insecure.invalid/logs",
+  "gen2compat": true
+}

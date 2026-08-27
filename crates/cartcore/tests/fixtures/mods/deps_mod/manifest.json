@@ -1,0 +1,16 @@
+{
+  "id": "deps",
+  "name": "Dependency Shapes",
+  "version": "2.0.0",
+  "entry": "src/main.lua",
+  "api": 2,
+  "dependency_sources": { "base": "owner/base" },
+  "dependencies": [
+    "base",
+    "helper@^1.0.0",
+    "themes@>=2.0.0 <3.0.0#https://github.com/owner/themes",
+    { "id": "audio", "range": ">=1.4.0 <1.5.0", "github": "owner/audio", "games": ["gen1"], "game_version": ">=1.2.0" }
+  ],
+  "conflicts": [{ "id": "rival", "range": "<2.0.0" }],
+  "affects_link": true
+}

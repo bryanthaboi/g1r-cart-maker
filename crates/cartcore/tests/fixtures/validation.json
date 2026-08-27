@@ -1,0 +1,4775 @@
+[
+  {
+    "name": "good",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": []
+  },
+  {
+    "name": "id=\"no spaces here\"",
+    "cart": {
+      "schema": 1,
+      "id": "no spaces here",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"id\" must be 1..64 characters of letters, digits, _ or -",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "id=\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"",
+    "cart": {
+      "schema": 1,
+      "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"id\" must be 1..64 characters of letters, digits, _ or -",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "title=\"\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"title\" must be at least 1 character(s)",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "title=\"ttttttttttttttttttttttttttttttttttttttttttttttttt\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "ttttttttttttttttttttttttttttttttttttttttttttttttt",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"title\" must be at most 48 characters (got 49)",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "version=\"1.0\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"version\" must be semver, e.g. 1.0.0",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "version=\"v1.0.0\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "v1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"version\" must be semver, e.g. 1.0.0",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "author=\"\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"author\" must be at least 1 character(s)",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "shell=\"8b1a1a\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"shell\" must be \"#rrggbb\", e.g. \"#8b1a1a\"",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "shell=\"#8b1a1\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"shell\" must be \"#rrggbb\", e.g. \"#8b1a1a\"",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "base=\"nonesuch\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "nonesuch",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"base\" must be one of red, blue, yellow, gold, silver, crystal",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "seal=\"welded\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "welded",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"seal\" must be one of: sealed, sealed+, open",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "schema=2",
+    "cart": {
+      "schema": 2,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"schema\" is 2; this cartkit writes and reads schema 1",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "summary=\"sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"summary\" must be at most 120 characters (got 121)",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "repo=\"someone\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"repo\" must be owner/name",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "engine=\">=1.0.0 <<2.0.0\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <<2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"engine\" has an unknown comparator '<<'; write it like \">=1.0.0 <2.0.0\"",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "schema=null",
+    "cart": {
+      "schema": null,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"schema\" is missing; add \"schema\": 1",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "schema=true",
+    "cart": {
+      "schema": true,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"schema\" must be the number 1",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "finish=\"matte\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ],
+      "finish": "matte"
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"finish\" must be one of: sparkle, holo, sparkle+holo",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "speeds=[]",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ],
+      "speeds": []
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"speeds\" must be a non-empty array",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "speeds=[5]",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ],
+      "speeds": [
+        5
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"speeds\" entries must be game-speed levels: 1, 2, 3, 4, 10, 20, 30, 50, 75, 100, 200",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "speeds=\"fast\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ],
+      "speeds": "fast"
+    },
+    "findings": [
+      {
+        "rule": "CK002",
+        "severity": "error",
+        "message": "\"speeds\" must be a non-empty array",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "label=\"/etc/passwd\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "/etc/passwd",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK003",
+        "severity": "error",
+        "message": "\"label\" must be a relative path inside the cart",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "label=\"../out.png\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "../out.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK003",
+        "severity": "error",
+        "message": "\"label\" must not leave the cart directory",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "label=\"a/../../b.png\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "a/../../b.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK003",
+        "severity": "error",
+        "message": "\"label\" must not leave the cart directory",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "label=\"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK003",
+        "severity": "error",
+        "message": "\"label\" must be at most 128 characters",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "label=\"C:\\\\art.png\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "C:\\art.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK003",
+        "severity": "error",
+        "message": "\"label\" must be a relative path inside the cart",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "label=\"sub dir/a.png\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "sub dir/a.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK003",
+        "severity": "error",
+        "message": "\"label\" must be a plain relative path (letters, digits, . _ - and /)",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "load_order=[\"harder-trainers\"]",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK005",
+        "severity": "error",
+        "message": "\"load_order\" leaves out new-music; name every pinned mod or drop the field",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "load_order=[\"harder-trainers\", \"ghost\"]",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "harder-trainers",
+        "ghost"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK005",
+        "severity": "error",
+        "message": "\"load_order\" leaves out new-music; name every pinned mod or drop the field",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK005",
+        "severity": "error",
+        "message": "\"load_order\" names ghost, which is not pinned in mods",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "load_order=[\"harder-trainers\", \"harder-trainers\"]",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "harder-trainers",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK005",
+        "severity": "error",
+        "message": "\"load_order\" repeats an id; it is a permutation of the mods, not a list of passes",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK005",
+        "severity": "error",
+        "message": "\"load_order\" leaves out new-music; name every pinned mod or drop the field",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "load_order=\"harder-trainers\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": "harder-trainers"
+    },
+    "findings": [
+      {
+        "rule": "CK005",
+        "severity": "error",
+        "message": "\"load_order\" must be an array of the mod ids",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "load_order=[1, 2]",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        1,
+        2
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK005",
+        "severity": "error",
+        "message": "\"load_order\" must be an array of the mod ids",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "colour=\"red\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ],
+      "colour": "red"
+    },
+    "findings": [
+      {
+        "rule": "CK001",
+        "severity": "warn",
+        "message": "unknown field 'colour'; cartkit packs only the documented fields",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "mods=[]",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "\"mods\" must list 1..64 pinned mods; a cart with no mods is just the base game",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "mods=\"nope\"",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": "nope",
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "\"mods\" must list 1..64 pinned mods; a cart with no mods is just the base game",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "drop repo",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": []
+  },
+  {
+    "name": "drop summary",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": []
+  },
+  {
+    "name": "drop engine",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": []
+  },
+  {
+    "name": "drop label",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": []
+  },
+  {
+    "name": "drop load_order",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ]
+    },
+    "findings": []
+  },
+  {
+    "name": "drop seal",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": []
+  },
+  {
+    "name": "github pin {\"source\": \"torrent\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "torrent",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers source must be github or gamebanana",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "github pin {\"repo\": \"nope\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "nope",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers repo must be owner/name",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "github pin {\"version\": \"1.0\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers version must be semver, e.g. 1.2.3",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "github pin {\"sha256\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers sha256 must be 64 lowercase hex characters; cartkit pin resolves it for you",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "github pin {\"sha256\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers sha256 must be 64 lowercase hex characters; cartkit pin resolves it for you",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "github pin {\"source\": \"local\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "local",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers is pinned to one install; a published cart needs a github or gamebanana pin nobody else has to guess at",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "github pin {\"mod\": 1}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          },
+          "mod": 1
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "warn",
+        "message": "mods[1] harder-trainers has 'mod', which belongs to a gamebanana pin",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "github pin {\"md5\": \"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          },
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "warn",
+        "message": "mods[1] harder-trainers has 'md5', which belongs to a gamebanana pin",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "github pin {\"enabled\": \"yes\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          },
+          "enabled": "yes"
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers enabled must be true or false; omit it to ship the mod on",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "github pin {\"extra\": 1}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          },
+          "extra": 1
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "warn",
+        "message": "mods[1] harder-trainers has unknown field 'extra'",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "github pin {\"repo\": \"owner/example-mod\", \"sha256\": \"0000000000000000000000000000000000000000000000000000000000000000\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "owner/example-mod",
+          "version": "2.1.0",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "warn",
+        "message": "mods[1] harder-trainers still points at the scaffold placeholder; pin a real release with cartkit pin <cart> owner/repo@X.Y.Z",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "warn",
+        "message": "mods[1] harder-trainers carries the scaffold placeholder hash; resolve it with cartkit pin",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "gamebanana pin {\"mod\": 0}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 0,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[2] new-music mod must be a positive integer id",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "gamebanana pin {\"mod\": \"546899\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": "546899",
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[2] new-music mod must be a positive integer id",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "gamebanana pin {\"file\": -1}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": -1,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[2] new-music file must be a positive integer id",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "gamebanana pin {\"md5\": \"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[2] new-music md5 must be 32 lowercase hex characters; cartkit pin resolves it for you",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "gamebanana pin {\"md5\": \"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[2] new-music md5 must be 32 lowercase hex characters; cartkit pin resolves it for you",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "gamebanana pin {\"repo\": \"a/b\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "repo": "a/b"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "warn",
+        "message": "mods[2] new-music has 'repo', which belongs to a github pin",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "gamebanana pin {\"version\": \"1.0.0\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "version": "1.0.0"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "warn",
+        "message": "mods[2] new-music has 'version', which belongs to a github pin",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "gamebanana pin {\"mod\": true}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": true,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[2] new-music mod must be a positive integer id",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "options {\"a\": {\"nested\": 1}}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "a": {
+              "nested": 1
+            }
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers option 'a' must be a string, number or boolean",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "options {\"a\": null}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "a": null
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers option 'a' must be a string, number or boolean",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "options {\"a\": [\"list\"]}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "a": [
+              "list"
+            ]
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers option 'a' must be a string, number or boolean",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "options {\"kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk": 1
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers option key 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk' must be 1..64 characters",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "options {\"a\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "a": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers option 'a' is 257 characters (max 256)",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "options {\"0\": 0, \"1\": 1, \"10\": 10, \"11\": 11, \"12\": 12, \"13\": 13, \"14",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "0": 0,
+            "1": 1,
+            "2": 2,
+            "3": 3,
+            "4": 4,
+            "5": 5,
+            "6": 6,
+            "7": 7,
+            "8": 8,
+            "9": 9,
+            "10": 10,
+            "11": 11,
+            "12": 12,
+            "13": 13,
+            "14": 14,
+            "15": 15,
+            "16": 16,
+            "17": 17,
+            "18": 18,
+            "19": 19,
+            "20": 20,
+            "21": 21,
+            "22": 22,
+            "23": 23,
+            "24": 24,
+            "25": 25,
+            "26": 26,
+            "27": 27,
+            "28": 28,
+            "29": 29,
+            "30": 30,
+            "31": 31,
+            "32": 32,
+            "33": 33,
+            "34": 34,
+            "35": 35,
+            "36": 36,
+            "37": 37,
+            "38": 38,
+            "39": 39,
+            "40": 40,
+            "41": 41,
+            "42": 42,
+            "43": 43,
+            "44": 44,
+            "45": 45,
+            "46": 46,
+            "47": 47,
+            "48": 48,
+            "49": 49,
+            "50": 50,
+            "51": 51,
+            "52": 52,
+            "53": 53,
+            "54": 54,
+            "55": 55,
+            "56": 56,
+            "57": 57,
+            "58": 58,
+            "59": 59,
+            "60": 60,
+            "61": 61,
+            "62": 62,
+            "63": 63,
+            "64": 64
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers has 65 options (max 64)",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "options {\"a\\t\": 1}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "a\t": 1
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers option key 'a\\t' must be plain text",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "options {\"a\": \"line\\nbreak\"}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "a": "line\nbreak"
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[1] harder-trainers option 'a' must not contain control characters",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "options {}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {}
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": []
+  },
+  {
+    "name": "options {\"ok\": 1.5}",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "ok": 1.5
+          }
+        },
+        {
+          "id": "new-music",
+          "source": "gamebanana",
+          "mod": 546899,
+          "file": 1294214,
+          "md5": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": []
+  },
+  {
+    "name": "65 mods",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        }
+      ],
+      "load_order": [
+        "new-music",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "\"mods\" has 65 entries (max 64)",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[2] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[3] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[4] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[5] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[6] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[7] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[8] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[9] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[10] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[11] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[12] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[13] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[14] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[15] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[16] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[17] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[18] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[19] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[20] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[21] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[22] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[23] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[24] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[25] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[26] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[27] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[28] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[29] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[30] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[31] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[32] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[33] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[34] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[35] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[36] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[37] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[38] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[39] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[40] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[41] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[42] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[43] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[44] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[45] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[46] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[47] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[48] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[49] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[50] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[51] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[52] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[53] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[54] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[55] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[56] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[57] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[58] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[59] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[60] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[61] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[62] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[63] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[64] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[65] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK005",
+        "severity": "error",
+        "message": "\"load_order\" names new-music, which is not pinned in mods",
+        "path": "cart.json"
+      }
+    ]
+  },
+  {
+    "name": "duplicate pin",
+    "cart": {
+      "schema": 1,
+      "id": "kanto-hard",
+      "title": "Kanto Hard Mode",
+      "version": "1.0.0",
+      "author": "someone",
+      "repo": "someone/kanto-hard",
+      "summary": "Every trainer bites back.",
+      "shell": "#8b1a1a",
+      "label": "label.png",
+      "base": "red",
+      "engine": ">=1.0.0 <2.0.0",
+      "seal": "sealed",
+      "mods": [
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        },
+        {
+          "id": "harder-trainers",
+          "source": "github",
+          "repo": "someone/harder-trainers",
+          "version": "2.1.0",
+          "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "options": {
+            "difficulty": "brutal",
+            "levelCap": 100,
+            "nuzlocke": true
+          }
+        }
+      ],
+      "load_order": [
+        "harder-trainers",
+        "harder-trainers"
+      ]
+    },
+    "findings": [
+      {
+        "rule": "CK004",
+        "severity": "error",
+        "message": "mods[2] harder-trainers repeats the id pinned at mods[1]; one pin per mod",
+        "path": "cart.json"
+      },
+      {
+        "rule": "CK005",
+        "severity": "error",
+        "message": "\"load_order\" repeats an id; it is a permutation of the mods, not a list of passes",
+        "path": "cart.json"
+      }
+    ]
+  }
+]

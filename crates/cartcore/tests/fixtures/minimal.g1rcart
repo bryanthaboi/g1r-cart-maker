@@ -1,0 +1,25 @@
+return {
+  cart = {
+    author = "someone",
+    base = "red",
+    id = "minimal",
+    load_order = {
+      [1] = "only",
+    },
+    mods = {
+      [1] = {
+        id = "only",
+        repo = "o/only",
+        sha256 = "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        source = "github",
+        version = "1.0.0",
+      },
+    },
+    seal = "sealed",
+    shell = "#8b1a1a",
+    title = "Minimal",
+    version = "0.1.0",
+  },
+  format = "g1rcart",
+  formatVersion = 1,
+}

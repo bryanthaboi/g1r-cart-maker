@@ -1,0 +1,15 @@
+{
+  "id": "imports",
+  "name": "Import Mod",
+  "version": "1.0.0",
+  "entry": "main.lua",
+  "api": 2,
+  "required_imports": [
+    { "id": "base_rom", "name": "Base ROM", "file": "base.gb",
+      "md5": ["3D45C1EE9ABD5738DF46D8DA13C4E14C"], "size": 1048576, "max_size": 2097152 }
+  ],
+  "optional_imports": [
+    { "id": "bonus", "file": "bonus.z64", "md5": "3d45c1ee9abd5738df46d8da13c4e14d",
+      "format": "n64", "hint": "optional dump" }
+  ]
+}
