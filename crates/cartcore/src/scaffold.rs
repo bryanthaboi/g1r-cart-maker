@@ -56,7 +56,7 @@ pub enum ScaffoldError {
     BadGithub(String),
     #[error("bad title {0} (1..48 characters)")]
     BadTitle(String),
-    #[error("base {0} is not one of red, blue, yellow, gold, silver, crystal")]
+    #[error("base {0} is not one of red, blue, yellow, gold, silver, crystal, firered, leafgreen, ruby, sapphire, emerald")]
     BadBase(String),
     #[error("seal {0} is not one of sealed, sealed+, open")]
     BadSeal(String),

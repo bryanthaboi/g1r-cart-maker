@@ -106,11 +106,21 @@ fn option_rows_shape() {
 #[test]
 fn label_template_and_export_shapes() {
     let templates = g1r_cart_maker_lib::label::templates();
-    assert_eq!(templates.len(), 6);
+    assert_eq!(templates.len(), cartcore::schema::BASES.len());
     let json = serde_json::to_value(&templates[0]).expect("serializes");
     has(&json, &["id", "name", "base", "width", "height", "dataUrl"]);
     assert_eq!(json["width"], 500);
     assert_eq!(json["height"], 441);
+    for template in &templates {
+        let base = template.base.as_deref().expect("every template has a base");
+        assert!(cartcore::schema::is_base(base), "{}", base);
+        assert_eq!(
+            (template.width, template.height),
+            cartcore::labeldoc::canvas_for(base),
+            "{}",
+            base
+        );
+    }
     assert!(json["dataUrl"]
         .as_str()
         .expect("data url")

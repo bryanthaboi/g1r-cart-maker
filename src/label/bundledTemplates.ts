@@ -1,14 +1,19 @@
-// The six shipped label templates, used when the backend cannot serve them.
+// The shipped label templates, used when the backend cannot serve them.
 
 import type { Base, LabelTemplate } from "../lib/types";
 import blueArt from "../../assets/labels/blue.png";
 import crystalArt from "../../assets/labels/crystal.png";
+import emeraldArt from "../../assets/labels/emerald.png";
+import fireredArt from "../../assets/labels/firered.png";
 import goldArt from "../../assets/labels/gold.png";
+import leafgreenArt from "../../assets/labels/leafgreen.png";
 import redArt from "../../assets/labels/red.png";
+import rubyArt from "../../assets/labels/ruby.png";
+import sapphireArt from "../../assets/labels/sapphire.png";
 import silverArt from "../../assets/labels/silver.png";
 import yellowArt from "../../assets/labels/yellow.png";
 import { fetchAsDataUrl } from "./core/images";
-import { CANVAS_HEIGHT, CANVAS_WIDTH } from "./core/doc";
+import { canvasFor } from "./core/doc";
 
 const ART: [Base, string, string][] = [
   ["red", "Red", redArt],
@@ -17,6 +22,11 @@ const ART: [Base, string, string][] = [
   ["gold", "Gold", goldArt],
   ["silver", "Silver", silverArt],
   ["crystal", "Crystal", crystalArt],
+  ["firered", "FireRed", fireredArt],
+  ["leafgreen", "LeafGreen", leafgreenArt],
+  ["ruby", "Ruby", rubyArt],
+  ["sapphire", "Sapphire", sapphireArt],
+  ["emerald", "Emerald", emeraldArt],
 ];
 
 export async function bundledTemplates(): Promise<LabelTemplate[]> {
@@ -27,8 +37,7 @@ export async function bundledTemplates(): Promise<LabelTemplate[]> {
         id: base,
         name,
         base,
-        width: CANVAS_WIDTH,
-        height: CANVAS_HEIGHT,
+        ...canvasFor(base),
         dataUrl,
       } satisfies LabelTemplate;
     }),

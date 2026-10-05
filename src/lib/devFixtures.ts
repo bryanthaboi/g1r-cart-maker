@@ -2,6 +2,7 @@
 // plain browser. See backend.ts for the single switch that selects it.
 
 import type { UnlistenFn } from "@tauri-apps/api/event";
+import { BASES, BASE_LABELS, cartShape } from "./constants";
 import type { ScaffoldRequest } from "./ipc";
 import { normalizeLoadOrder } from "./loadOrder";
 import { validateCart } from "./validate";
@@ -681,7 +682,7 @@ export const fixtureFeeds = {
         mods: clone(MOD_ENTRIES),
         carts: [],
         categories: ["Difficulty", "Graphics", "Gameplay", "Audio"],
-        baseGames: ["red", "blue", "yellow", "gold", "silver", "crystal"],
+        baseGames: [...BASES],
       },
       refresh ? 1200 : 400,
     ),
@@ -694,12 +695,12 @@ export const fixtureFeeds = {
 export const fixtureLabel = {
   templates: (): Promise<LabelTemplate[]> =>
     delay(
-      (["red", "blue", "yellow", "gold", "silver", "crystal"] as const).map((base) => ({
+      BASES.map((base) => ({
         id: base,
-        name: base.charAt(0).toUpperCase() + base.slice(1),
+        name: BASE_LABELS[base],
         base,
-        width: 500,
-        height: 441,
+        width: cartShape(base) === "gba" ? 512 : 500,
+        height: cartShape(base) === "gba" ? 260 : 441,
         dataUrl: PLACEHOLDER_PNG,
       })),
       300,

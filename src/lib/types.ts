@@ -15,7 +15,19 @@ export interface Report {
   notes: string[];
 }
 
-export type Base = "red" | "blue" | "yellow" | "gold" | "silver" | "crystal";
+export type Base =
+  | "red"
+  | "blue"
+  | "yellow"
+  | "gold"
+  | "silver"
+  | "crystal"
+  | "firered"
+  | "leafgreen"
+  | "ruby"
+  | "sapphire"
+  | "emerald";
+export type CartShape = "gb" | "gba";
 export type Seal = "sealed" | "sealed+" | "open";
 export type Finish = "sparkle" | "holo" | "sparkle+holo";
 export type PinSource = "github" | "gamebanana";

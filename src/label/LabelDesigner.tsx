@@ -3,6 +3,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, type ChangeEvent } from "react";
 import { api } from "../lib/backend";
+import { cartShape } from "../lib/constants";
 import { IpcError } from "../lib/ipc";
 
 const labelIpc = api.label;
@@ -14,6 +15,7 @@ import {
   addLayer,
   blankDoc,
   boxForImage,
+  canvasFor,
   canvasRect,
   duplicateLayers,
   findLayer,
@@ -125,7 +127,7 @@ export default function LabelDesigner(props: LabelDesignerProps): JSX.Element {
   const [templates, setTemplates] = useState<readonly LabelTemplate[]>([]);
   const [templatesReady, setTemplatesReady] = useState(false);
   const [history, setHistory] = useState<History<LabelDoc>>(() =>
-    createHistory(props.doc ? normaliseDoc(props.doc) : blankDoc(normaliseHex(cart.shell, "#ffffff"))),
+    createHistory(props.doc ? normaliseDoc(props.doc) : blankDoc(normaliseHex(cart.shell, "#ffffff"), "blank", canvasFor(cart.base))),
   );
   /// The document the PNG on disk was last rendered from.
   const writtenRef = useRef<string | null>(null);
@@ -156,6 +158,14 @@ export default function LabelDesigner(props: LabelDesignerProps): JSX.Element {
   const resolve = useMemo(() => cache.resolver(), [cache]);
 
   const template = useMemo(() => templateById(templates, doc.template), [templates, doc.template]);
+  const shapeTemplates = useMemo(
+    () =>
+      templates.filter(
+        (entry) =>
+          entry.id === doc.template || entry.base === null || cartShape(entry.base) === cartShape(cart.base),
+      ),
+    [templates, doc.template, cart.base],
+  );
 
   useEffect(() => {
     let alive = true;
@@ -720,6 +730,7 @@ export default function LabelDesigner(props: LabelDesignerProps): JSX.Element {
             doc={doc}
             resolve={resolve}
             shell={cart.shell}
+            shape={cartShape(cart.base)}
             finish={cart.finish ?? null}
             redrawToken={redrawToken}
           />
@@ -745,7 +756,7 @@ export default function LabelDesigner(props: LabelDesignerProps): JSX.Element {
           onRaise={() => commit(moveInZ(doc, selection, "forward"), "Bring forward")}
           onLower={() => commit(moveInZ(doc, selection, "backward"), "Send backward")}
           hasSelection={selection.length > 0}
-          templates={templates}
+          templates={shapeTemplates}
           templateId={doc.template}
           onTemplate={switchTemplate}
         />

@@ -1,5 +1,5 @@
-//! Label templates and label art writing. The six shipped templates are the
-//! engine's own cartridge labels, 500x441 each.
+//! Label templates and label art writing. The shipped templates are the engine's
+//! own cartridge labels: 500x441 for a GB base, 512x260 for a GBA base.
 
 use crate::error::{AppError, AppResult};
 use crate::project::{decode_png_data_url, png_data_url};
@@ -17,13 +17,18 @@ macro_rules! template {
     };
 }
 
-const TEMPLATES: [(&str, &str, &[u8]); 6] = [
+const TEMPLATES: [(&str, &str, &[u8]); 11] = [
     template!("red", "Red", "red.png"),
     template!("blue", "Blue", "blue.png"),
     template!("yellow", "Yellow", "yellow.png"),
     template!("gold", "Gold", "gold.png"),
     template!("silver", "Silver", "silver.png"),
     template!("crystal", "Crystal", "crystal.png"),
+    template!("firered", "FireRed", "firered.png"),
+    template!("leafgreen", "LeafGreen", "leafgreen.png"),
+    template!("ruby", "Ruby", "ruby.png"),
+    template!("sapphire", "Sapphire", "sapphire.png"),
+    template!("emerald", "Emerald", "emerald.png"),
 ];
 
 #[derive(Debug, Clone, Serialize)]
@@ -41,7 +46,8 @@ pub fn templates() -> Vec<LabelTemplate> {
     TEMPLATES
         .iter()
         .map(|(id, name, bytes)| {
-            let (width, height) = cartcore::labelart::png_dimensions(bytes).unwrap_or((500, 441));
+            let (width, height) = cartcore::labelart::png_dimensions(bytes)
+                .unwrap_or_else(|| cartcore::labeldoc::canvas_for(id));
             LabelTemplate {
                 id: (*id).to_string(),
                 name: (*name).to_string(),

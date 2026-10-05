@@ -53,10 +53,12 @@ app keeps it a permutation for you.
 
 ## 3. Design the label
 
-The canvas is 500x441, the size of the engine's own cartridge labels. Start from
-one of the six shipped templates, replace images, edit text, and align, snap and
-nudge until it looks right. The preview shows the cart as the launcher draws it,
-with your shell colour and finish.
+The canvas is the size of the engine's own cartridge labels: 500x441 for a Game
+Boy base (Red through Crystal), 512x260 for a GBA base (FireRed, LeafGreen,
+Ruby, Sapphire, Emerald). Start from the shipped template for your base, replace
+images, edit text, and align, snap and nudge until it looks right. The preview
+shows the cart as the launcher draws it, in a GB or GBA shell, with your shell
+colour and finish.
 
 Export writes the PNG into the cart directory. Anything the manifest would
 reject - not a PNG, over 1 MB, a path that leaves the cart - is refused before

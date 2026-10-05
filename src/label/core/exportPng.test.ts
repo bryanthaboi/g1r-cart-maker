@@ -160,4 +160,25 @@ describe("label export", () => {
     );
     expect([png.width, png.height]).toEqual([500, 441]);
   });
+
+  it("writes a GBA label at the launcher's 512x260", async () => {
+    for (const base of ["firered", "leafgreen", "ruby", "sapphire", "emerald"] as const) {
+      const bytes = readFileSync(joinPath(process.cwd(), `assets/labels/${base}.png`));
+      const image = await loadImage(bytes);
+      expect([image.width, image.height], base).toEqual([512, 260]);
+      const art = { image, width: image.width, height: image.height } as unknown as Bitmap;
+      const template: LabelTemplate = {
+        id: base,
+        name: base,
+        base,
+        width: 512,
+        height: 260,
+        dataUrl: `data:image/png;base64,${bytes.toString("base64")}`,
+      };
+      const doc = initialDoc([template], { ...cart(), base }).doc;
+      const png = await decodeAsync(exportDataUrl(doc, () => art, { multiple: 1, quantize: null }));
+      expect([png.width, png.height], base).toEqual([512, 260]);
+      expect(png.at(500, 10)[3], base).toBe(255);
+    }
+  });
 });

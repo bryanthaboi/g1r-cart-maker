@@ -537,7 +537,7 @@
       {
         "rule": "CK002",
         "severity": "error",
-        "message": "\"base\" must be one of red, blue, yellow, gold, silver, crystal",
+        "message": "\"base\" must be one of red, blue, yellow, gold, silver, crystal, firered, leafgreen, ruby, sapphire, emerald",
         "path": "cart.json"
       }
     ]

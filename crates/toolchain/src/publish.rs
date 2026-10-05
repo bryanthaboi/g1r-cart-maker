@@ -533,7 +533,8 @@ impl Session<'_> {
         }
         let doc_path = dir.join(DOC_FILE);
         if !doc_path.exists() {
-            fs::write(&doc_path, serialize_doc(&LabelDoc::default()))
+            let base = cart_str(cart, "base").unwrap_or("red");
+            fs::write(&doc_path, serialize_doc(&LabelDoc::for_base(base)))
                 .map_err(|problem| self.io(problem, &doc_path))?;
             written.push(DOC_FILE.to_string());
         }

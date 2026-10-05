@@ -13,6 +13,7 @@ use crate::semver;
 pub fn generation_of(id: &str) -> u32 {
     match id {
         "gold" | "silver" | "crystal" => 2,
+        "firered" | "leafgreen" | "emerald" | "ruby" | "sapphire" => 3,
         _ => 1,
     }
 }
@@ -157,7 +158,16 @@ fn strip_bom(text: &str) -> String {
     text.strip_prefix('\u{feff}').unwrap_or(text).to_string()
 }
 
-/// ModTargets.expand: "red", "gen1" or "all".
+/// GameVersion.layout
+pub fn layout_of(id: &str) -> Option<&'static str> {
+    match id {
+        "firered" | "leafgreen" => Some("frlg"),
+        "emerald" | "ruby" | "sapphire" => Some("rse"),
+        _ => None,
+    }
+}
+
+/// ModTargets.expand: "red", "gen1", "frlg" or "all".
 fn expand_game(token: &str) -> Option<Vec<String>> {
     let key = token.trim().to_lowercase();
     if key == "all" {
@@ -166,13 +176,24 @@ fn expand_game(token: &str) -> Option<Vec<String>> {
     if BASES.contains(&key.as_str()) {
         return Some(vec![key]);
     }
-    let digits = key.strip_prefix("gen")?.trim();
-    let generation: u32 = digits.parse().ok()?;
-    let list = generation_versions(generation);
-    if list.is_empty() {
+    if let Some(generation) = key
+        .strip_prefix("gen")
+        .and_then(|digits| digits.trim().parse::<u32>().ok())
+    {
+        let list = generation_versions(generation);
+        if !list.is_empty() {
+            return Some(list);
+        }
+    }
+    let family: Vec<String> = BASES
+        .iter()
+        .filter(|id| layout_of(id) == Some(key.as_str()))
+        .map(|id| id.to_string())
+        .collect();
+    if family.is_empty() {
         None
     } else {
-        Some(list)
+        Some(family)
     }
 }
 
@@ -478,11 +499,10 @@ pub fn validate_manifest(raw: &Value) -> Result<ParsedManifest, String> {
         )?;
     }
     if games.is_empty() {
-        games = if gen2_declared {
-            BASES.iter().map(|id| id.to_string()).collect()
-        } else {
-            generation_versions(1)
-        };
+        games = generation_versions(1);
+        if gen2_declared {
+            games.extend(generation_versions(2));
+        }
     } else if gen2_declared {
         let mut set: BTreeSet<String> = games.iter().cloned().collect();
         set.extend(generation_versions(2));

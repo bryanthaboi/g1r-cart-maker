@@ -2,7 +2,7 @@
 // The finish here is an approximation of the engine's shader, not the shader itself.
 
 import { useEffect, useMemo, useRef } from "react";
-import type { Finish, LabelDoc } from "../../lib/types";
+import type { CartShape, Finish, LabelDoc } from "../../lib/types";
 import { mixHex, normaliseHex, rgba } from "../core/colour";
 import { contextOf, makeCanvas } from "../core/exportPng";
 import { drawDoc, roundedRectPath, type ImageResolver } from "../core/render";
@@ -11,12 +11,89 @@ export interface CartPreviewProps {
   doc: LabelDoc;
   resolve: ImageResolver;
   shell: string;
+  shape?: CartShape;
   finish: Finish | null;
   redrawToken: number;
 }
 
-const WIDTH = 240;
-const HEIGHT = 268;
+interface Box {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+type Outline = readonly (readonly [number, number])[];
+
+// CartShape.lua
+const GBA_ASPECT = 60 / 34.5;
+const GBA_BODY: Outline = [
+  [-0.472, -0.345],
+  [0.472, -0.345],
+  [0.472, 0.47],
+  [0.458, 0.5],
+  [-0.458, 0.5],
+  [-0.472, 0.47],
+];
+const GBA_CAP: Outline = [
+  [-0.473, -0.5],
+  [0.473, -0.5],
+  [0.49, -0.482],
+  [0.5, -0.447],
+  [0.5, -0.32],
+  [-0.5, -0.32],
+  [-0.5, -0.447],
+  [-0.49, -0.482],
+];
+const GBA_LABEL = [-0.365, -0.265, 0.73, 0.645] as const;
+
+interface Layout {
+  width: number;
+  height: number;
+  body: Box;
+  label: Box;
+  radius: number;
+}
+
+function layoutFor(shape: CartShape): Layout {
+  if (shape === "gba") {
+    const width = 300;
+    const bodyWidth = width - 16;
+    const bodyHeight = Math.round(bodyWidth / GBA_ASPECT);
+    const height = bodyHeight + 16;
+    const body = { x: 8, y: 8, width: bodyWidth, height: bodyHeight };
+    const cx = body.x + body.width / 2;
+    const cy = body.y + body.height / 2;
+    const label = {
+      x: cx + GBA_LABEL[0] * body.width,
+      y: cy + GBA_LABEL[1] * body.height,
+      width: GBA_LABEL[2] * body.width,
+      height: GBA_LABEL[3] * body.height,
+    };
+    return { width, height, body, label, radius: 6 };
+  }
+  const width = 240;
+  return {
+    width,
+    height: 268,
+    body: { x: 8, y: 8, width: width - 16, height: 268 - 16 },
+    label: { x: 24, y: 30, width: width - 48, height: (width - 48) * (441 / 500) },
+    radius: 8,
+  };
+}
+
+function outlinePath(ctx: CanvasRenderingContext2D, outline: Outline, box: Box): void {
+  const cx = box.x + box.width / 2;
+  const cy = box.y + box.height / 2;
+  ctx.beginPath();
+  outline.forEach(([x, y], index) => {
+    const px = cx + x * box.width;
+    const py = cy + y * box.height;
+    if (index === 0) ctx.moveTo(px, py);
+    else ctx.lineTo(px, py);
+  });
+  ctx.closePath();
+}
 
 interface Twinkle {
   x: number;
@@ -50,8 +127,10 @@ export default function CartPreview(props: CartPreviewProps): JSX.Element {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ratio = window.devicePixelRatio || 1;
-    canvas.width = Math.round(WIDTH * ratio);
-    canvas.height = Math.round(HEIGHT * ratio);
+    const shape = props.shape ?? "gb";
+    const layout = layoutFor(shape);
+    canvas.width = Math.round(layout.width * ratio);
+    canvas.height = Math.round(layout.height * ratio);
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
@@ -74,43 +153,78 @@ export default function CartPreview(props: CartPreviewProps): JSX.Element {
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const shell = normaliseHex(props.shell, "#8a8f98");
-    const labelBox = { x: 24, y: 30, width: WIDTH - 48, height: (WIDTH - 48) * (441 / 500) };
+    const labelBox = layout.label;
 
     const render = (time: number): void => {
       ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-      ctx.clearRect(0, 0, WIDTH, HEIGHT);
+      ctx.clearRect(0, 0, layout.width, layout.height);
 
-      const body = { x: 8, y: 8, width: WIDTH - 16, height: HEIGHT - 16 };
+      const body = layout.body;
       const shade = ctx.createLinearGradient(body.x, body.y, body.x + body.width, body.y + body.height);
       shade.addColorStop(0, mixHex(shell, "#ffffff", 0.22));
       shade.addColorStop(0.55, shell);
       shade.addColorStop(1, mixHex(shell, "#000000", 0.28));
-      roundedRectPath(ctx, body, 16);
-      ctx.fillStyle = shade;
-      ctx.fill();
-      ctx.strokeStyle = rgba(mixHex(shell, "#000000", 0.5), 0.7);
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
+      const edge = rgba(mixHex(shell, "#000000", 0.5), 0.7);
+      if (shape === "gba") {
+        outlinePath(ctx, GBA_CAP, body);
+        ctx.fillStyle = mixHex(shell, "#000000", 0.12);
+        ctx.fill();
+        ctx.strokeStyle = edge;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        outlinePath(ctx, GBA_BODY, body);
+        ctx.fillStyle = shade;
+        ctx.fill();
+        ctx.strokeStyle = edge;
+        ctx.stroke();
+      } else {
+        roundedRectPath(ctx, body, 16);
+        ctx.fillStyle = shade;
+        ctx.fill();
+        ctx.strokeStyle = edge;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
 
-      ctx.save();
-      roundedRectPath(ctx, body, 16);
-      ctx.clip();
-      ctx.fillStyle = rgba(mixHex(shell, "#000000", 0.35), 0.5);
-      for (let index = 0; index < 5; index += 1) {
-        ctx.fillRect(body.x + 22 + index * 14, body.y + body.height - 52, 6, 40);
+        ctx.save();
+        roundedRectPath(ctx, body, 16);
+        ctx.clip();
+        ctx.fillStyle = rgba(mixHex(shell, "#000000", 0.35), 0.5);
+        for (let index = 0; index < 5; index += 1) {
+          ctx.fillRect(body.x + 22 + index * 14, body.y + body.height - 52, 6, 40);
+        }
+        ctx.fillStyle = rgba(mixHex(shell, "#000000", 0.4), 0.35);
+        ctx.fillRect(body.x, body.y + body.height - 74, body.width, 3);
+        ctx.restore();
       }
-      ctx.fillStyle = rgba(mixHex(shell, "#000000", 0.4), 0.35);
-      ctx.fillRect(body.x, body.y + body.height - 74, body.width, 3);
-      ctx.restore();
 
       ctx.save();
-      roundedRectPath(ctx, labelBox, 8);
+      roundedRectPath(ctx, labelBox, layout.radius);
       ctx.clip();
-      ctx.fillStyle = mixHex(shell, "#ffffff", 0.85);
-      ctx.fillRect(labelBox.x, labelBox.y, labelBox.width, labelBox.height);
       const source = labelRef.current;
-      if (source) {
-        ctx.drawImage(source, labelBox.x, labelBox.y, labelBox.width, labelBox.height);
+      if (shape === "gba") {
+        const backdrop = ctx.createLinearGradient(0, labelBox.y, 0, labelBox.y + labelBox.height);
+        backdrop.addColorStop(0, mixHex(shell, "#000000", 0.44));
+        backdrop.addColorStop(1, mixHex(shell, "#000000", 0.76));
+        ctx.fillStyle = backdrop;
+        ctx.fillRect(labelBox.x, labelBox.y, labelBox.width, labelBox.height);
+        if (source) {
+          const scale = Math.min(labelBox.width / source.width, labelBox.height / source.height);
+          const drawWidth = source.width * scale;
+          const drawHeight = source.height * scale;
+          ctx.drawImage(
+            source,
+            labelBox.x + (labelBox.width - drawWidth) / 2,
+            labelBox.y + (labelBox.height - drawHeight) / 2,
+            drawWidth,
+            drawHeight,
+          );
+        }
+      } else {
+        ctx.fillStyle = mixHex(shell, "#ffffff", 0.85);
+        ctx.fillRect(labelBox.x, labelBox.y, labelBox.width, labelBox.height);
+        if (source) {
+          ctx.drawImage(source, labelBox.x, labelBox.y, labelBox.width, labelBox.height);
+        }
       }
 
       const seconds = reduced ? 0.35 : time / 1000;
@@ -165,7 +279,7 @@ export default function CartPreview(props: CartPreviewProps): JSX.Element {
       }
       ctx.restore();
 
-      roundedRectPath(ctx, labelBox, 8);
+      roundedRectPath(ctx, labelBox, layout.radius);
       ctx.strokeStyle = rgba(mixHex(shell, "#000000", 0.55), 0.55);
       ctx.lineWidth = 1;
       ctx.stroke();
@@ -175,11 +289,12 @@ export default function CartPreview(props: CartPreviewProps): JSX.Element {
 
     frameRef.current = window.requestAnimationFrame(render);
     return () => window.cancelAnimationFrame(frameRef.current);
-  }, [props.doc, props.finish, props.redrawToken, props.resolve, props.shell, sparks]);
+  }, [props.doc, props.finish, props.redrawToken, props.resolve, props.shape, props.shell, sparks]);
 
+  const aspect = layoutFor(props.shape ?? "gb");
   return (
     <div className="ld-preview">
-      <canvas ref={canvasRef} style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }} />
+      <canvas ref={canvasRef} style={{ aspectRatio: `${aspect.width} / ${aspect.height}` }} />
       <p className="ld-note">
         Cartridge preview: shell {normaliseHex(props.shell, "#8a8f98")}, finish {props.finish ?? "none"}.
         The finish is an approximation of the launcher&apos;s shader.

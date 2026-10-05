@@ -2,9 +2,21 @@
 // The backend is authoritative; these exist so the UI can explain a rejection
 // before a round trip.
 
-import type { Base, Finish, Seal } from "./types";
+import type { Base, CartShape, Finish, Seal } from "./types";
 
-export const BASES: readonly Base[] = ["red", "blue", "yellow", "gold", "silver", "crystal"];
+export const BASES: readonly Base[] = [
+  "red",
+  "blue",
+  "yellow",
+  "gold",
+  "silver",
+  "crystal",
+  "firered",
+  "leafgreen",
+  "ruby",
+  "sapphire",
+  "emerald",
+];
 export const SEALS: readonly Seal[] = ["sealed", "sealed+", "open"];
 export const FINISHES: readonly Finish[] = ["sparkle", "holo", "sparkle+holo"];
 export const SPEED_LADDER: readonly number[] = [1, 2, 3, 4, 10, 20, 30, 50, 75, 100, 200];
@@ -57,7 +69,41 @@ export const BASE_LABELS: Record<Base, string> = {
   gold: "Gold",
   silver: "Silver",
   crystal: "Crystal",
+  firered: "FireRed",
+  leafgreen: "LeafGreen",
+  ruby: "Ruby",
+  sapphire: "Sapphire",
+  emerald: "Emerald",
 };
+
+// RomImporter.lua CART_RAIL
+export const BASE_SHELLS: Record<Base, string> = {
+  red: "#ff3c48",
+  blue: "#4696ff",
+  yellow: "#ffcb05",
+  gold: "#da9120",
+  silver: "#bec6d2",
+  crystal: "#84c4e4",
+  firered: "#dc3030",
+  leafgreen: "#26a24e",
+  ruby: "#b92e32",
+  sapphire: "#355ec4",
+  emerald: "#1f9e6e",
+};
+
+// GameVersion.cartShape
+export function cartShape(base: Base): CartShape {
+  switch (base) {
+    case "firered":
+    case "leafgreen":
+    case "ruby":
+    case "sapphire":
+    case "emerald":
+      return "gba";
+    default:
+      return "gb";
+  }
+}
 
 export const FINISH_HELP: Record<Finish, string> = {
   sparkle: "Glittered shell, as on a first-print cartridge.",

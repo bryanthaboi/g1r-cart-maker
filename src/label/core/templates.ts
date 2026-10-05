@@ -1,14 +1,17 @@
 // Deriving a starting document from a shipped template. Slot ids in `from_template`
 // are what a reset and a title sync look for, so they are part of the saved format.
 
+import { BASE_LABELS } from "../../lib/constants";
 import type { Base, Cart, LabelDoc, LabelTemplate, Layer } from "../../lib/types";
 import { inkFor, normaliseHex } from "./colour";
 import {
   CANVAS_HEIGHT,
   CANVAS_WIDTH,
   blankDoc,
+  canvasFor,
   newImageLayer,
   newTextLayer,
+  type CanvasSize,
   type TextLayer,
 } from "./doc";
 
@@ -26,17 +29,8 @@ export function slotRef(templateId: string, slot: string): string {
   return `${templateId}:${slot}`;
 }
 
-const BASE_NAMES: Record<Base, string> = {
-  red: "Red",
-  blue: "Blue",
-  yellow: "Yellow",
-  gold: "Gold",
-  silver: "Silver",
-  crystal: "Crystal",
-};
-
 export function baseName(base: Base): string {
-  return BASE_NAMES[base] ?? base;
+  return BASE_LABELS[base] ?? base;
 }
 
 export function baseLine(base: Base): string {
@@ -65,15 +59,52 @@ function titleText(cart: Cart): string {
   return cart.title.trim().length > 0 ? cart.title.trim() : cart.id;
 }
 
+interface TextSlot {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  size: number;
+}
+
+export function textSlots(size: CanvasSize): { title: TextSlot; base: TextSlot } {
+  if (size.width > size.height * 1.5) {
+    const x = Math.round(size.width * 0.2);
+    const width = size.width - x - Math.round(size.width * 0.05);
+    const unit = size.height / 260;
+    return {
+      title: { x, y: Math.round(156 * unit), width, height: Math.round(50 * unit), size: Math.round(34 * unit) },
+      base: { x, y: Math.round(210 * unit), width, height: Math.round(30 * unit), size: Math.round(18 * unit) },
+    };
+  }
+  return {
+    title: { x: 42, y: 196, width: size.width - 84, height: 62, size: 40 },
+    base: { x: 42, y: 264, width: size.width - 84, height: 32, size: 21 },
+  };
+}
+
+function sizeOf(template: LabelTemplate | null, cart: Cart): CanvasSize {
+  if (template && template.width > 0 && template.height > 0) {
+    return { width: template.width, height: template.height };
+  }
+  return canvasFor(cart.base);
+}
+
 /** The generated text layers: a title band and a base-game line, both resettable. */
-export function titleLayer(templateId: string, cart: Cart, ink: string): TextLayer {
+export function titleLayer(
+  templateId: string,
+  cart: Cart,
+  ink: string,
+  size: CanvasSize = canvasFor(cart.base),
+): TextLayer {
+  const slot = textSlots(size).title;
   const layer = newTextLayer({
     text: titleText(cart),
-    x: 42,
-    y: 196,
-    width: CANVAS_WIDTH - 84,
-    height: 62,
-    size: 40,
+    x: slot.x,
+    y: slot.y,
+    width: slot.width,
+    height: slot.height,
+    size: slot.size,
     colour: ink,
     align: "center",
     name: "Cart title",
@@ -85,14 +116,20 @@ export function titleLayer(templateId: string, cart: Cart, ink: string): TextLay
   return layer;
 }
 
-export function baseLayer(templateId: string, cart: Cart, ink: string): TextLayer {
+export function baseLayer(
+  templateId: string,
+  cart: Cart,
+  ink: string,
+  size: CanvasSize = canvasFor(cart.base),
+): TextLayer {
+  const slot = textSlots(size).base;
   return newTextLayer({
     text: baseLine(cart.base),
-    x: 42,
-    y: 264,
-    width: CANVAS_WIDTH - 84,
-    height: 32,
-    size: 21,
+    x: slot.x,
+    y: slot.y,
+    width: slot.width,
+    height: slot.height,
+    size: slot.size,
     colour: ink,
     align: "center",
     name: "Base game",
@@ -119,12 +156,15 @@ export function artLayer(template: LabelTemplate): Layer {
 
 export function docFromTemplate(template: LabelTemplate, cart: Cart): LabelDoc {
   const ink = "#ffffff";
-  const doc = blankDoc(normaliseHex(cart.shell, "#ffffff"), template.id);
+  const size = sizeOf(template, cart);
+  const doc = blankDoc(normaliseHex(cart.shell, "#ffffff"), template.id, size);
   return {
     ...doc,
-    width: template.width || CANVAS_WIDTH,
-    height: template.height || CANVAS_HEIGHT,
-    layers: [artLayer(template), titleLayer(template.id, cart, ink), baseLayer(template.id, cart, ink)],
+    layers: [
+      artLayer(template),
+      titleLayer(template.id, cart, ink, size),
+      baseLayer(template.id, cart, ink, size),
+    ],
   };
 }
 
@@ -132,10 +172,11 @@ export function docFromTemplate(template: LabelTemplate, cart: Cart): LabelDoc {
 export function docFromBlank(cart: Cart): LabelDoc {
   const background = normaliseHex(cart.shell, "#d0d4da");
   const ink = inkFor(background);
-  const doc = blankDoc(background, "blank");
+  const size = canvasFor(cart.base);
+  const doc = blankDoc(background, "blank", size);
   return {
     ...doc,
-    layers: [titleLayer("blank", cart, ink), baseLayer("blank", cart, ink)],
+    layers: [titleLayer("blank", cart, ink, size), baseLayer("blank", cart, ink, size)],
   };
 }
 
@@ -162,9 +203,9 @@ export function resetLayer(
     case ART_SLOT:
       return template ? { ...artLayer(template), id: layer.id, name: layer.name } : null;
     case TITLE_SLOT:
-      return { ...titleLayer(templateId, cart, ink), id: layer.id, name: layer.name };
+      return { ...titleLayer(templateId, cart, ink, sizeOf(template, cart)), id: layer.id, name: layer.name };
     case BASE_SLOT:
-      return { ...baseLayer(templateId, cart, ink), id: layer.id, name: layer.name };
+      return { ...baseLayer(templateId, cart, ink, sizeOf(template, cart)), id: layer.id, name: layer.name };
     default:
       return null;
   }

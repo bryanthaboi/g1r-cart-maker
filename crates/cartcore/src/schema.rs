@@ -17,7 +17,19 @@ pub const BUNDLE_FORMAT: &str = "g1rcart";
 pub const BUNDLE_VERSION: u64 = 1;
 pub const CART_SCHEMA: u64 = 1;
 
-pub const BASES: [&str; 6] = ["red", "blue", "yellow", "gold", "silver", "crystal"];
+pub const BASES: [&str; 11] = [
+    "red",
+    "blue",
+    "yellow",
+    "gold",
+    "silver",
+    "crystal",
+    "firered",
+    "leafgreen",
+    "ruby",
+    "sapphire",
+    "emerald",
+];
 pub const SEALS: [&str; 3] = ["sealed", "sealed+", "open"];
 pub const FINISHES: [&str; 3] = ["sparkle", "holo", "sparkle+holo"];
 /// GameSpeed.LEVELS (src/core/GameSpeed.lua).
@@ -111,6 +123,14 @@ lazy_regex!(
 
 pub fn is_base(value: &str) -> bool {
     BASES.contains(&value)
+}
+
+/// GameVersion.cartShape
+pub fn cart_shape(base: &str) -> &'static str {
+    match base {
+        "firered" | "leafgreen" | "ruby" | "sapphire" | "emerald" => "gba",
+        _ => "gb",
+    }
 }
 
 pub fn is_seal(value: &str) -> bool {

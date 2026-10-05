@@ -1,12 +1,27 @@
 // The label document: creation, normalisation and layer edits. This is the on-disk
 // format the Rust side validates, so nothing here may invent a field or a kind.
 
-import type { FitMode, LabelDoc, Layer, TextAlign } from "../../lib/types";
+import { cartShape } from "../../lib/constants";
+import type { Base, FitMode, LabelDoc, Layer, TextAlign } from "../../lib/types";
 import type { Rect } from "./geometry";
 
 export const DOC_SCHEMA = 1;
 export const CANVAS_WIDTH = 500;
 export const CANVAS_HEIGHT = 441;
+// CartLabelArt.lua
+export const GBA_CANVAS_WIDTH = 512;
+export const GBA_CANVAS_HEIGHT = 260;
+
+export interface CanvasSize {
+  width: number;
+  height: number;
+}
+
+export function canvasFor(base: Base): CanvasSize {
+  return cartShape(base) === "gba"
+    ? { width: GBA_CANVAS_WIDTH, height: GBA_CANVAS_HEIGHT }
+    : { width: CANVAS_WIDTH, height: CANVAS_HEIGHT };
+}
 
 export type ImageLayer = Extract<Layer, { kind: "image" }>;
 export type TextLayer = Extract<Layer, { kind: "text" }>;
@@ -27,11 +42,15 @@ export function makeLayerId(prefix: string): string {
   return `${prefix}-${idCounter.toString(36)}${random}`;
 }
 
-export function blankDoc(background = "#ffffff", template = "blank"): LabelDoc {
+export function blankDoc(
+  background = "#ffffff",
+  template = "blank",
+  size: CanvasSize = { width: CANVAS_WIDTH, height: CANVAS_HEIGHT },
+): LabelDoc {
   return {
     schema: DOC_SCHEMA,
-    width: CANVAS_WIDTH,
-    height: CANVAS_HEIGHT,
+    width: size.width,
+    height: size.height,
     template,
     background,
     layers: [],

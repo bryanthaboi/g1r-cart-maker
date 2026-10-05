@@ -7,9 +7,20 @@ use serde::{Deserialize, Serialize};
 
 pub const DOC_FILE: &str = "label.layers.json";
 pub const DOC_SCHEMA: u32 = 1;
-/// Every shipped template is 500x441; that is the cart label canvas.
+/// The GB templates are 500x441; that is the GB cart label canvas.
 pub const CANVAS_WIDTH: u32 = 500;
 pub const CANVAS_HEIGHT: u32 = 441;
+/// CartLabelArt.lua
+pub const GBA_CANVAS_WIDTH: u32 = 512;
+pub const GBA_CANVAS_HEIGHT: u32 = 260;
+
+pub fn canvas_for(base: &str) -> (u32, u32) {
+    if crate::schema::cart_shape(base) == "gba" {
+        (GBA_CANVAS_WIDTH, GBA_CANVAS_HEIGHT)
+    } else {
+        (CANVAS_WIDTH, CANVAS_HEIGHT)
+    }
+}
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "lowercase")]
@@ -108,6 +119,17 @@ impl Default for LabelDoc {
             template: "blank".to_string(),
             background: "#ffffff".to_string(),
             layers: Vec::new(),
+        }
+    }
+}
+
+impl LabelDoc {
+    pub fn for_base(base: &str) -> Self {
+        let (width, height) = canvas_for(base);
+        Self {
+            width,
+            height,
+            ..Self::default()
         }
     }
 }

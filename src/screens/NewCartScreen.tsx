@@ -1,13 +1,11 @@
 import { useCallback, useMemo, useState } from "react";
 import { Banner, Button, Card, ColourPicker, Field, Select, TextArea, TextInput } from "../components/ui";
 import { api } from "../lib/backend";
-import { BASES, BASE_LABELS, LIMITS, SEALS, SEAL_HELP } from "../lib/constants";
+import { BASES, BASE_LABELS, BASE_SHELLS, LIMITS, SEALS, SEAL_HELP } from "../lib/constants";
 import { pickDirectory } from "../lib/dialogs";
 import type { Base, Seal } from "../lib/types";
 import { hasErrors, validateNewCart, type NewCartForm } from "../lib/validate";
 import { useStore } from "../state/store";
-
-const DEFAULT_SHELL = "#d33a2c";
 
 function suggestId(title: string): string {
   return title
@@ -25,12 +23,13 @@ export function NewCartScreen(): JSX.Element {
     author: state.environment?.identity.name ?? "",
     summary: "",
     base: "red",
-    shell: DEFAULT_SHELL,
+    shell: BASE_SHELLS.red,
     seal: "sealed",
     github: "",
     parent: state.environment?.paths.projects ?? "",
   });
   const [idEdited, setIdEdited] = useState(false);
+  const [shellEdited, setShellEdited] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const errors = useMemo(() => validateNewCart(form), [form]);
@@ -161,7 +160,13 @@ export function NewCartScreen(): JSX.Element {
           <Select
             id="new-base"
             value={form.base as Base}
-            onChange={(value) => set("base", value)}
+            onChange={(value: Base) =>
+              setForm((current) => ({
+                ...current,
+                base: value,
+                shell: shellEdited ? current.shell : BASE_SHELLS[value],
+              }))
+            }
             options={BASES.map((base) => ({ value: base, label: BASE_LABELS[base] }))}
           />
         </Field>
@@ -171,7 +176,14 @@ export function NewCartScreen(): JSX.Element {
           error={show("shell")}
           hint="The plastic behind the label. Written to cart.json as #rrggbb."
         >
-          <ColourPicker id="new-shell" value={form.shell} onChange={(value) => set("shell", value)} />
+          <ColourPicker
+            id="new-shell"
+            value={form.shell}
+            onChange={(value) => {
+              setShellEdited(true);
+              set("shell", value);
+            }}
+          />
         </Field>
         <Field label="Seal" error={show("seal")}>
           <div className="seal-options" role="radiogroup" aria-label="Seal">
